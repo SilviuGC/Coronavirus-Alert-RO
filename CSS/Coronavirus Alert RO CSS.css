@@ -35,11 +35,12 @@
 	text-decoration:none;
 	text-shadow:0px 1px 0px #1570cd;
 }
-.button_county {
+
+.button_county:hover {
 	background:linear-gradient(to bottom, #1fbacf 5%, #3d94f6 100%);
 	background-color:#1fbacf;
 }
-.button_county {
+.button_county:active {
 	position:relative;
 	top:1px;
 }
@@ -56,13 +57,47 @@
 	float: left;
 }
 
-div.scrollable {
+.scrollable {
     width: 300px;
-    height: 620px;
+    height: 530px;  /* lower this if there are white margins at the top and the bottom of the map */
     overflow: auto;
 }
 
-.header {
-	font-family: "Palatino";
+.font1 {
+	font-family: 'Nanum Gothic', sans-serif;
 	text-align: center;
+	font-size:14px;
+	padding-right: 25px;
+}
+
+.font2 {
+	font-family: 'Nanum Gothic', sans-serif;
+	text-align: center;
+	font-size: 40px;
+	color: red;
+	padding-right: 15px;
+}
+
+.list_bullet_r {
+	content: "•";
+	color:red
+	font-family: 'Nanum Gothic', sans-serif;
+	text-align: center;
+	font-size:14px;
+}
+
+.list_bullet_y {
+	content: "•";
+	color:yellow
+	font-family: 'Nanum Gothic', sans-serif;
+	text-align: center;
+	font-size:14px;
+}
+
+.list_bullet_b {
+	content: "•";
+	color:blue
+	font-family: 'Nanum Gothic', sans-serif;
+	text-align: center;
+	font-size:14px;
 }
