@@ -12,16 +12,10 @@
 	border-top: 1px solid #eee;
 }
 
-.top_row2 {
-    display: table;
-    width: 100%;
-	border-spacing: 5px;
-}
-
-.top_row2 {
-    display: table-cell;
-	padding: 10px;
-    width: 50%;
+/* Set the size of the div element that contains the map */
+#map {
+  height: 735px;
+  width: 100%;
 }
 
 .button_county {

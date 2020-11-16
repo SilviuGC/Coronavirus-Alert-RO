@@ -2,14 +2,22 @@
 
 	<head>
 		<link rel="stylesheet" href="../CSS/Coronavirus Alert RO CSS.css">
+		
+		<script
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&callback=initMap&libraries=&v=weekly"
+			defer
+		></script>
+				
+		<script src="../JS/Coronavirus Alert RO JS.js"></script>
+
 	</head>
 	
 	<body>
 		<table style=" border: 1px solid black;">
 
-		  <tr style="height:100%; border: 1px solid black;">
+		  <tr style="height:20%; border: 1px solid black;">
 			
-			<th style="width:30%; border: 1px solid black; vertical-align:top">
+			<th style="width:18%; border: 1px solid black; vertical-align:top">
 			
 				<div class="top_row">
 					<div> <button> <= </button> Total confirmed cases &nbsp; 6969696 </div>
@@ -30,7 +38,9 @@
 				
 			</th> 
 			
-			<th style="width:70%; border: 1px solid black;">Firstname</th>
+			<th style="border: 1px solid black;">
+				<div id="map"></div>
+			</th>
 			
 		  </tr>
 		  
