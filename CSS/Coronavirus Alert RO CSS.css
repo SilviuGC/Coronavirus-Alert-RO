@@ -63,7 +63,7 @@
 
 .scrollable {
     width: 300px;
-    height: 530px;  /* lower this if there are white margins at the top and the bottom of the map */
+    height: 515px;  /* lower this if there are white margins at the top and the bottom of the map */
     overflow: auto;
 }
 
@@ -83,25 +83,28 @@
 	padding-right: 5px;
 }
 
-.list_bullet_r {
+.list_bullet_black {
 	content: "•";
 	color:black;
 	font-family: 'Nanum Gothic', sans-serif;
 	font-size:13px;
+	padding-top:10px;
 }
 
-.list_bullet_y {
+.list_bullet_orange {
 	content: "•";
 	color:orange;
 	font-family: 'Nanum Gothic', sans-serif;
 	font-size:13px;
+	padding-top:10px;
 }
 
-.list_bullet_b {
+.list_bullet_lime {
 	content: "•";
 	color:lime;
 	font-family: 'Nanum Gothic', sans-serif;
 	font-size:13px;
+	padding-top:10px;
 }
 
 .text_to_left_color {
