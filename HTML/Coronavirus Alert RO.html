@@ -9,6 +9,8 @@
 			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&callback=initMap&libraries=&v=weekly"
 			defer
 		></script>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 				
 		<script src="../JS/Coronavirus Alert RO JS.js"></script>
 
@@ -22,7 +24,7 @@
 			<th style="width:18%; max-width:400px; border: 1px solid #989898; vertical-align:top">
 			
 				<div class="top_row">
-					<div> <button class="go_back_button">
+					<div> <button id="Back" class="go_back_button">
 							<img src="../Images/left_arrow.png" style="height: 11px; width: 7px;">
 						  </button> 
 						  
@@ -80,10 +82,10 @@
 				<div class="scrollable">
 				<div class="top_row">
 					<div>
-						<button class="button_county"> Alba </button>
+						<button id="Alba" class="button_county"> Alba </button>
 						<div>&nbsp;</div>
 
-						<button class="button_county"> Arad </button>
+						<button id="Arad" class="button_county"> Arad </button>
 						<div>&nbsp;</div>
 
 						<button class="button_county"> Arges </button>
