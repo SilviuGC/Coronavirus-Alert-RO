@@ -1,6 +1,6 @@
 var map;
 var marker;
-var ok=0;
+var back_button_pressed=0, first_location=1;
 
 // Initialize and add the map
 function initMap() {
@@ -24,6 +24,18 @@ function initMap() {
     map: map,
   });
 
+  function zoom_in_zoom_out_timeout(first_timeout, second_timeout, newLat, newLng){
+		map.setZoom(zoom = 7.249);
+		setTimeout(() => {
+		  marker.setPosition({
+			lat : newLat,
+			lng : newLng,
+		  }); 
+		}, first_timeout);
+	  
+	  setTimeout(() => {map.setZoom(zoom = 9);}, second_timeout);	
+  }
+
   function newLocation(newLat,newLng)
   {
     
@@ -32,19 +44,26 @@ function initMap() {
       lng : newLng,
     });
 
-    marker.setPosition({
-      lat : newLat,
-      lng : newLng,
-    }); 
-
     if(map.zoom!=7){
       map.setZoom(zoom = 7.25);
     } 
-    else map.setZoom(zoom = 9);
+    else if(first_location==1){
+	  zoom_in_zoom_out_timeout(0, 500, newLat, newLng);
+	
+	  first_location=0;
+	}
      
-    if(ok==0 && map.zoom!=9){
-      setTimeout(() => {  map.setZoom(zoom = 9); }, 1100);
+    if(back_button_pressed==0 && map.zoom!=9){
+	  zoom_in_zoom_out_timeout(1000, 1200, newLat, newLng);
     }
+	else if(back_button_pressed==1){
+		setTimeout(() => {
+		  marker.setPosition({
+			lat : newLat,
+			lng : newLng,
+		  }); 
+		}, 1100);
+	}
 
   }
 
@@ -54,9 +73,10 @@ function initMap() {
 
     $("#Back").on('click', function ()
     {
-      ok=1;
+      back_button_pressed=1;
       newLocation(45.9922858, 25.0094303);
-      ok=0;
+      back_button_pressed=0;
+	  first_location=1;
     });
 
     $("#Alba").on('click', function ()
