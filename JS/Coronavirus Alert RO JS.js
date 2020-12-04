@@ -54,13 +54,13 @@ function initMap() {
           map.setZoom(zoom = 7.25);
         } 
         else if(first_location==1 && back_button_pressed==0){
-        marker_and_zoom_in_timeout(0, 800, newLat, newLng, locationArea);
+        marker_and_zoom_in_timeout(0, 1000, newLat, newLng, locationArea);
 
         first_location=0;
       }
         
         if(back_button_pressed==0 && map.zoom!=9){
-        marker_and_zoom_in_timeout(1000, 1500, newLat, newLng, locationArea);
+        marker_and_zoom_in_timeout(1000, 1700, newLat, newLng, locationArea);
         }
         else if(back_button_pressed==1){
           map.setZoom(zoom = 7.25);
