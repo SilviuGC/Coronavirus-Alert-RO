@@ -1,6 +1,7 @@
 var map;
 var marker;
 var back_button_pressed=0, first_location=1;
+var auxLat, auxLng;
 
 // Initialize and add the map
 function initMap() {
@@ -24,7 +25,7 @@ function initMap() {
     map: map,
   });
 
-  function zoom_in_zoom_out_timeout(first_timeout, second_timeout, newLat, newLng){
+  function marker_and_zoom_in_timeout(first_timeout, second_timeout, newLat, newLng){
 		map.setZoom(zoom = 7.249);
 		setTimeout(() => {
 		  marker.setPosition({
@@ -38,32 +39,37 @@ function initMap() {
 
   function newLocation(newLat,newLng)
   {
-    
-    map.setCenter({
-      lat : newLat,
-      lng : newLng,
-    });
+      if(auxLat!=newLat && auxLng!=newLng)
+      {     
+        map.setCenter({
+          lat : newLat,
+          lng : newLng,
+        });
 
-    if(map.zoom!=7){
-      map.setZoom(zoom = 7.25);
-    } 
-    else if(first_location==1){
-	  zoom_in_zoom_out_timeout(0, 500, newLat, newLng);
-	
-	  first_location=0;
-	}
-     
-    if(back_button_pressed==0 && map.zoom!=9){
-	  zoom_in_zoom_out_timeout(1000, 1200, newLat, newLng);
+        if(map.zoom!=7){
+          map.setZoom(zoom = 7.25);
+        } 
+        else if(first_location==1){
+        marker_and_zoom_in_timeout(0, 500, newLat, newLng);
+      
+        first_location=0;
+      }
+        
+        if(back_button_pressed==0 && map.zoom!=9){
+        marker_and_zoom_in_timeout(1000, 1200, newLat, newLng);
+        }
+      else if(back_button_pressed==1){
+        setTimeout(() => {
+          marker.setPosition({
+          lat : newLat,
+          lng : newLng,
+          }); 
+        }, 1000);
+      }
     }
-	else if(back_button_pressed==1){
-		setTimeout(() => {
-		  marker.setPosition({
-			lat : newLat,
-			lng : newLng,
-		  }); 
-		}, 1100);
-	}
+
+   auxLat = newLat;
+   auxLng = newLng;
 
   }
 
