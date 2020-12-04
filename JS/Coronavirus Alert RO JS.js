@@ -255,7 +255,7 @@ function initMap() {
 
     $("#Satu-Mare").on('click', function ()
     {
-    newLocation(47.733198, 22.765542, SatuMareArea);
+    newLocation(47.633198, 22.865542, SatuMareArea);
     });
 
     $("#Salaj").on('click', function ()
