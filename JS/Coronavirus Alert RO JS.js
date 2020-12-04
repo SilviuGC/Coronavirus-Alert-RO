@@ -125,7 +125,7 @@ function initMap() {
 
     $("#Botosani").on('click', function ()
     {
-    newLocation(47.845071, 26.759986, BotosaniArea);
+    newLocation(47.745071, 26.659986, BotosaniArea);
     });
 
     $("#Brasov").on('click', function ()
@@ -180,7 +180,7 @@ function initMap() {
 
     $("#Dolj").on('click', function ()
     {
-    newLocation(44.204397, 23.668666, DoljArea);
+    newLocation(44.319016, 23.796561, DoljArea);
     });
 
     $("#Galati").on('click', function ()
