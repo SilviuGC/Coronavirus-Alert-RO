@@ -190,7 +190,7 @@ function initMap() {
 
     $("#Giurgiu").on('click', function ()
     {
-    newLocation(44.123526, 26.050044, GiurgiuArea);
+    newLocation(44.123526, 25.950044, GiurgiuArea);
     });
 
     $("#Gorj").on('click', function ()
@@ -215,7 +215,7 @@ function initMap() {
 
     $("#Iasi").on('click', function ()
     {
-    newLocation(47.161494, 27.58405, IasiArea);
+    newLocation(47.181494, 27.28405, IasiArea);
     });
 
     $("#Ilfov").on('click', function ()
