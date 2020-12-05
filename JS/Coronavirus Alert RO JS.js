@@ -389,4 +389,9 @@ function initMap() {
 
     return finalData;
   }
+
+
+  //GRAB DATA FROM JSON URL
+
+  
 }
