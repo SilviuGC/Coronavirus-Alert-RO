@@ -1,0 +1,220 @@
+<html>
+	<meta http-equiv="Cache-control" content="private">
+	<meta charset="UTF-8">
+
+	<head>
+		<link rel="stylesheet" href="../CSS/Coronavirus Alert RO CSS.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+		
+		<script
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&callback=initMap&libraries=&v=weekly"
+			defer
+		></script>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+				
+		<script src="../JS/Coronavirus Alert RO JS.js"></script>
+
+	</head>
+	
+	<body>
+		<table>
+
+		  <tr>
+			
+			<th style="width:18%; max-width:400px; border: 1px solid #989898; vertical-align:top">
+			
+				<div class="top_row">
+					<div> <button id="Back" class="go_back_button">
+							<img src="../Images/left_arrow.png" style="height: 11px; width: 7px;">
+						  </button> 
+						  
+						  <div class="font1">
+							  <p>
+							  Total confirmed cases:
+							  </p>
+						  </div>
+						  
+						  <div class="font2">
+							  
+							  1.200.000
+							  
+						  </div>
+						  
+						  <ul style="padding-left: 20px; padding-right: 5px;">
+							<div class="list_bullet_lime">				
+								<li>
+									<div class="text_to_left_color">Active Cases
+										<div class="text_to_right_color">12000000
+										</div>
+									</div>
+								</li>
+							</div>
+							<div class="list_bullet_orange">
+								<li>
+									<div class="text_to_left_color">Recovered Cases
+										<div class="text_to_right_color">1
+										</div>
+									</div>
+								</li>
+							</div>
+							<div class="list_bullet_black">
+								<li>
+									<div class="text_to_left_color">Fatal Cases
+										<div class="text_to_right_color">1
+										</div>
+									</div>
+								</li>
+							</div>
+						  </ul>
+						  
+					</div>
+				</div>
+			</th>
+							
+			<th rowspan="2" style="border: 1px solid #989898;">
+				<div id="map"></div>
+			</th>	
+			
+		  </tr>
+		  
+		  <tr>
+			<th style="border: 1px solid #989898; vertical-align:top;">
+				<div class="scrollable">
+					<div class="top_row">
+						<div>
+							<button id="Alba" class="button_county"> Alba </button>
+							<div>&nbsp;</div>
+
+							<button id="Arad" class="button_county"> Arad </button>
+							<div>&nbsp;</div>
+
+							<button id="Arges" class="button_county"> Argeș </button>
+							<div>&nbsp;</div>
+
+							<button id="Bacau" class="button_county"> Bacău </button>
+							<div>&nbsp;</div>
+
+							<button id="Bihor" class="button_county"> Bihor </button>
+							<div>&nbsp;</div>
+
+							<button id="Bistrita-Nasaud" class="button_county"> Bistrița-Năsăud </button>
+							<div>&nbsp;</div>
+
+							<button id="Botosani" class="button_county"> Botoșani </button>
+							<div>&nbsp;</div>
+
+							<button id="Brasov" class="button_county"> Brașov </button>
+							<div>&nbsp;</div>
+
+							<button id="Braila" class="button_county"> Brăila </button>
+							<div>&nbsp;</div>
+
+							<button id="Bucuresti" class="button_county"> București </button>
+							<div>&nbsp;</div>
+
+							<button id="Buzau" class="button_county"> Buzău </button>
+							<div>&nbsp;</div>
+
+							<button id="Caras-Severin" class="button_county"> Caraș-Severin </button>
+							<div>&nbsp;</div>
+
+							<button id="Calarasi" class="button_county"> Călărași </button>
+							<div>&nbsp;</div>
+
+							<button id="Cluj" class="button_county"> Cluj </button>
+							<div>&nbsp;</div>
+
+							<button id="Constanta" class="button_county"> Constanța </button>
+							<div>&nbsp;</div>
+
+							<button id="Covasna" class="button_county"> Covasna </button>
+							<div>&nbsp;</div>
+
+							<button id="Dambovita" class="button_county"> Dâmbovița </button>
+							<div>&nbsp;</div>
+
+							<button id="Dolj" class="button_county"> Dolj </button>
+							<div>&nbsp;</div>
+
+							<button id="Galati" class="button_county"> Galați </button>
+							<div>&nbsp;</div>
+
+							<button id="Giurgiu" class="button_county"> Giurgiu </button>
+							<div>&nbsp;</div>
+
+							<button id="Gorj" class="button_county"> Gorj </button>
+							<div>&nbsp;</div>
+
+							<button id="Harghita" class="button_county"> Harghita </button>
+							<div>&nbsp;</div>
+
+							<button id="Hunedoara" class="button_county"> Hunedoara </button>
+							<div>&nbsp;</div>
+
+							<button id="Iasi" class="button_county"> Iași </button>
+							<div>&nbsp;</div>
+							
+							<button id="Ialomita" class="button_county"> Ialomița </button>
+							<div>&nbsp;</div>
+
+							<button id="Ilfov" class="button_county"> Ilfov </button>
+							<div>&nbsp;</div>
+
+							<button id="Maramures" class="button_county"> Maramureș </button>
+							<div>&nbsp;</div>
+
+							<button id="Mehedinti" class="button_county"> Mehedinți </button>
+							<div>&nbsp;</div>
+
+							<button id="Mures" class="button_county"> Mureș </button>
+							<div>&nbsp;</div>
+
+							<button id="Neamt" class="button_county"> Neamț </button>
+							<div>&nbsp;</div>
+
+							<button id="Olt" class="button_county"> Olt </button>
+							<div>&nbsp;</div>
+
+							<button id="Prahova" class="button_county"> Prahova </button>
+							<div>&nbsp;</div>
+
+							<button id="Salaj" class="button_county"> Sălaj </button>
+							<div>&nbsp;</div>
+
+							<button id="Satu-Mare" class="button_county"> Satu-Mare </button>
+							<div>&nbsp;</div>
+
+							<button id="Sibiu" class="button_county"> Sibiu </button>
+							<div>&nbsp;</div>
+
+							<button id="Suceava" class="button_county"> Suceava </button>
+							<div>&nbsp;</div>
+
+							<button id="Teleorman" class="button_county"> Teleorman </button>
+							<div>&nbsp;</div>
+
+							<button id="Timis" class="button_county"> Timiș </button>
+							<div>&nbsp;</div>
+
+							<button id="Tulcea" class="button_county"> Tulcea </button>
+							<div>&nbsp;</div>
+
+							<button id="Valcea" class="button_county"> Vâlcea </button>
+							<div>&nbsp;</div>
+
+							<button id="Vaslui" class="button_county"> Vaslui </button>
+							<div>&nbsp;</div>
+
+							<button id="Vrancea" class="button_county"> Vrancea </button>
+						</div>
+					</div>
+				</div>
+			</th>
+		  </tr>
+		  
+		</table>
+	</body>
+
+</html>
