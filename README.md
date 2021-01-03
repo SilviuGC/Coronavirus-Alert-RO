@@ -1,3 +1,3 @@
-Use "py -m http.server" command in cmd (Command Prompt) to start the local server.
-After that, just write "localhost:8000" in your browser and click on the main html or just type "http://localhost:8000/Coronavirus%20Alert%20RO.html".
-
+You need to have any Python 3.x.x version installed.
+After that, just run one of the batch files. If one doesn't work, the other one should.
+To close the server, you need to go to the cmd and press "CTRL + C", "y" and "Enter".
