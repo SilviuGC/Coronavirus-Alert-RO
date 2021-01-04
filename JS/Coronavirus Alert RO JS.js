@@ -4,9 +4,8 @@ var back_button_pressed=0, first_location=1;
 var auxLat, auxLng, auxMapArea;
 var highlightCoordinates, highlightPolygon;
 var initialize=false;
-var alert_limit = localStorage.getItem("alert_limit_key");;
+var alert_limit = localStorage.getItem("alert_limit_key");
 var current_location = false;
-var dada = null;
 
 // Initialize and add the map
 function initMap() {
@@ -422,7 +421,7 @@ function initMap() {
               alert("Value has been exceeded!\nOver " + alert_limit + " infections!");
               current_location = false;
             },2000);
-          }
+          } else current_location = false;
 
           if(data.currentDayStats.incidence[county]>=3)
             document.querySelector("#active_cases-incidence").firstChild.data = "Incidence (Very High)";
