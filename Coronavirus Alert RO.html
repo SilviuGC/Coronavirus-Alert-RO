@@ -13,6 +13,8 @@
 		></script>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 				
 		<script src="JS/Coronavirus Alert RO JS.js"></script>
 		
@@ -78,7 +80,7 @@
 				</div>
 			</th>
 							
-			<th rowspan="2" style="border: 1px solid #989898;">
+			<th rowspan="3" style="border: 1px solid #989898;">
 				<div id="map"></div>
 			</th>	
 			
@@ -86,7 +88,7 @@
 		  
 		  <tr>
 			<th style="border: 1px solid #989898; vertical-align:top;">
-				<div class="scrollable" id="county_list">
+				<div class="scrollable1" id="county_list">
 					<div class="top_row">
 						<div>
 							<button id="Alba" class="button_county"> Alba </button>
@@ -214,6 +216,23 @@
 
 							<button id="Vrancea" class="button_county"> Vrancea </button>
 						</div>
+					</div>
+				</div>
+			</th>
+		  </tr>
+
+		  <tr>
+			<th style="border: 1px solid #989898; vertical-align:top;">
+				<div class="scrollable2">
+					<div style="width: 300px; overflow-x: auto; overflow-y: auto">
+						<div style="width: 1230px; height: 295px">
+							<canvas  id="myChartCountyInfectedNumbers" width="200px" height="48px"></canvas>
+						</div>	
+					</div>
+					<div style="width: 300px; overflow-x: auto; overflow-y: auto">
+						<div style="width: 1230px; height: 295px">
+							<canvas  id="myChartCountyIncidenceNumbers" width="200px" height="48px"></canvas>
+						</div>	
 					</div>
 				</div>
 			</th>

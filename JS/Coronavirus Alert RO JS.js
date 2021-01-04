@@ -6,6 +6,7 @@ var highlightCoordinates, highlightPolygon;
 var initialize=false;
 var alert_limit = localStorage.getItem("alert_limit_key");
 var current_location = false;
+var myChartCincN, myChartCInfN;
 
 // Initialize and add the map
 function initMap() {
@@ -29,8 +30,12 @@ function initMap() {
     map: map,
   });
 
+  initiateChartCountyInfectedNumbers();
+  initiateChartCountyIncidenceNumbers();
+  extractCountyAndInfectionsNumberData();
+
   setTimeout(() => {
-    alertMode()
+    alertMode();
   },1000);
 
   function marker_and_zoom_in_timeout(first_timeout, second_timeout, newLat, newLng, locationArea, locationAbbreviation){
@@ -473,13 +478,13 @@ function initMap() {
   }
 
   function increaseCountyListHeight(){
-    if(document.getElementById("county_list").style.height != "570px")
-      document.getElementById("county_list").style.height = "570px";
+    if(document.getElementById("county_list").style.height != "256px")
+      document.getElementById("county_list").style.height = "256px";
   }
 
   function decreaseCountyListHeight(){
-    if(document.getElementById("county_list").style.height != "520px")
-      document.getElementById("county_list").style.height = "520px";
+    if(document.getElementById("county_list").style.height != "206px")
+      document.getElementById("county_list").style.height = "206px";
   }
 
   function numberWithCommas(x) {
@@ -504,4 +509,118 @@ function initMap() {
     document.getElementById("alert_sound").play();
   }
 
+  function extractCountyAndInfectionsNumberData() {
+      fetch("https://d35p9e4fm9h3wo.cloudfront.net/latestData.json")
+      .then(resp => resp.json())
+      .then(data => {
+        //console.log(data.currentDayStats);
+        
+        $.each(data.currentDayStats.countyInfectionsNumbers, function(i, item) {
+          //console.log(i + " " + item);   
+          addData(myChartCInfN, i, item);
+      })   
+      
+        $.each(data.currentDayStats.incidence, function(i, item) {
+          //console.log(i+ " " +item);
+          addColor(myChartCInfN, item);
+
+          addData(myChartCincN, i, item);
+          addColor(myChartCincN, item);
+      }) 
+    })
+  }
+
+  function initiateChartCountyInfectedNumbers() {
+    var ctx = document.getElementById('myChartCountyInfectedNumbers').getContext('2d');
+    myChartCInfN = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: [],
+            datasets: [{
+                label: 'Number of infected people by county (colors by incidence severity)',
+                data: [],
+                backgroundColor: [],
+                borderColor: [],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+  }
+
+  function initiateChartCountyIncidenceNumbers() {
+    var ctx = document.getElementById('myChartCountyIncidenceNumbers').getContext('2d');
+    myChartCincN = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: [],
+            datasets: [{
+                label: 'Number of incidence by county (colors by severity)',
+                data: [],
+                backgroundColor: [],
+                borderColor: [],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+  }
+
+  function addData(chart, newLabel, newData) {
+    chart.data.labels.push(newLabel);
+    chart.data.datasets.forEach((dataset) => {
+        dataset.data.push(newData);
+    });
+    chart.update();
+  }
+
+  //addData(myChart,'1',3);
+
+  function addColor(chart, incidenceForColor){
+    chart.data.datasets.forEach((dataset) => {
+      dataset.backgroundColor.push(incidenceColorByCounty(incidenceForColor));
+      dataset.borderColor.push(incidenceBorderColorByCounty(incidenceForColor));
+    });
+    chart.update();
+  }
+
+  function incidenceColorByCounty(incidenceForColor){
+    if(incidenceForColor>=3)
+    return 'rgba(255, 99, 132, 0.8)';
+  else if(incidenceForColor<3 && incidenceForColor>=1.5)
+    return 'rgba(235, 168, 52, 0.8)';
+  else if(incidenceForColor<1.5 && incidenceForColor>=1)
+    return 'rgba(235, 235, 52, 0.8)';
+  else if(incidenceForColor<1)
+    return 'rgba(52, 235, 52, 0.8)';
+  else return 'rgba(0, 0, 0, 0.8)';
+  }
+
+  function incidenceBorderColorByCounty(incidenceForColor){
+    if(incidenceForColor>=3)
+    return 'rgba(255, 99, 132, 1)';
+  else if(incidenceForColor<3 && incidenceForColor>=1.5)
+    return 'rgba(235, 168, 52, 1)';
+  else if(incidenceForColor<1.5 && incidenceForColor>=1)
+    return 'rgba(235, 235, 52, 1)';
+  else if(incidenceForColor<1)
+    return 'rgba(52, 235, 52, 1)';
+  else return 'rgba(0, 0, 0, 1)';
+  }
 }
