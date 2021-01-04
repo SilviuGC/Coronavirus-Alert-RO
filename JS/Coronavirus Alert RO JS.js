@@ -561,9 +561,9 @@ function initMap() {
             },
         tooltips: {
             callbacks: {
-              label: function(tooltipItem) {
-              console.log(tooltipItem)
-                return tooltipItem.yLabel;
+              label: function(tooltipItem1) {
+              console.log(tooltipItem1)
+                return tooltipItem1.yLabel;
               }
             }
           }
@@ -595,9 +595,9 @@ function initMap() {
           },
       tooltips: {
           callbacks: {
-            label: function(tooltipItem) {
-            console.log(tooltipItem)
-              return tooltipItem.yLabel;
+            label: function(tooltipItem2) {
+            console.log(tooltipItem2)
+              return tooltipItem2.yLabel;
             }
           }
         }
