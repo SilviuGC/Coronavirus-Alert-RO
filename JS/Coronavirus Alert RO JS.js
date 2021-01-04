@@ -393,7 +393,7 @@ function initMap() {
         fetch("https://d35p9e4fm9h3wo.cloudfront.net/latestData.json")
         .then(resp => resp.json())
         .then(data => {
-          //console.log(data.currentDayStats);
+          console.log(data.currentDayStats); //DON'T FORGET ABOUT THIS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
           document.querySelector("#infected_number").innerText = numberWithCommas(data.currentDayStats.numberInfected);
           document.querySelector("#active_cases-incidence").firstChild.data = "Active Cases";
           document.querySelector("#active_number-incidence_number").innerText = numberWithCommas(data.currentDayStats.numberInfected - data.currentDayStats.numberCured - data.currentDayStats.numberDeceased);
@@ -418,6 +418,7 @@ function initMap() {
 
           if(current_location == true && data.currentDayStats.countyInfectionsNumbers[county]>alert_limit){
             setTimeout(() => {
+              playAlertSound();
               alert("Value has been exceeded!\nOver " + alert_limit + " infections!");
               current_location = false;
             },2000);
@@ -500,4 +501,8 @@ function initMap() {
     }
   }
   
+  function playAlertSound() {
+    document.getElementById("alert_sound").play();
+  }
+
 }
