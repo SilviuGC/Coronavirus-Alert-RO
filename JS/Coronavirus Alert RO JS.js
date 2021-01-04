@@ -116,6 +116,13 @@ function initMap() {
 
            alert_limit = prompt("Please enter the number limit for an alert for " + (location.state) + ".\n(Or just leave blank if you want to disable alert mode.)", localStorage.getItem("alert_limit_key"));
 
+           while(alert_limit.replace(/[0-9]/g, '').length!=0){
+            alert_limit = prompt("Please enter a valid number or leave blank to cancel alerts.");
+
+            if(alert_limit.replace(/[0-9]/g, '').length!=0)
+              console.log(/^\d+$/.test(alert_limit));
+           }
+           
            localStorage.setItem("alert_limit_key", alert_limit); 
 
            if(parseInt(alert_limit)>=0){
@@ -551,6 +558,14 @@ function initMap() {
                         beginAtZero: true
                     }
                 }]
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem) {
+                console.log(tooltipItem)
+                  return tooltipItem.yLabel;
+                }
+              }
             }
         }
     });
@@ -578,6 +593,14 @@ function initMap() {
                     }
                 }]
             }
+        },
+        tooltips: {
+          callbacks: {
+            label: function(tooltipItem) {
+            console.log(tooltipItem)
+              return tooltipItem.yLabel;
+            }
+          }
         }
     });
   }
