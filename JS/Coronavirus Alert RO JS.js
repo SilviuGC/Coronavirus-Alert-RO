@@ -559,12 +559,12 @@ function initMap() {
                     }
                 }]
             },
-        tooltips: {
+        showAllTooltips: true,
+          tooltips: {
             callbacks: {
-              label: function(tooltipItem1) {
-              console.log(tooltipItem1)
-                return tooltipItem1.yLabel;
-              }
+              label: function(tooltipItem, data) {
+                return tooltipItem.yLabel;
+              },
             }
           }
         }
@@ -593,12 +593,12 @@ function initMap() {
                   }
               }]
           },
-      tooltips: {
+        showAllTooltips: true,
+        tooltips: {
           callbacks: {
-            label: function(tooltipItem2) {
-            console.log(tooltipItem2)
-              return tooltipItem2.yLabel;
-            }
+            label: function(tooltipItem, data) {
+              return tooltipItem.yLabel;
+            },
           }
         }
       }
