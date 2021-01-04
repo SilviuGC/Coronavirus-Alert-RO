@@ -27,7 +27,11 @@
 			
 				<div class="top_row">
 					<div> <button id="Back" class="go_back_button">
-							<img src="../Images/left_arrow.png" style="height: 11px; width: 7px;">
+							<img src="Images/left_arrow.png" style="height: 11px; width: 7px;">
+						  </button> 
+
+						  <button id="Bell" class="bell_button">
+							<img src="Images/bell_icon.png" style="height: 18px; width: 13px;">
 						  </button> 
 						  
 						  <div class="font1">
@@ -36,33 +40,33 @@
 							  </p>
 						  </div>
 						  
-						  <div class="font2">
+						  <div class="font2" id="infected_number">
 							  
-							  1.200.000
+							  -
 							  
 						  </div>
 						  
 						  <ul style="padding-left: 20px; padding-right: 5px;">
-							<div class="list_bullet_lime">				
+							<div class="list_bullet_orange" id="active">				
 								<li>
-									<div class="text_to_left_color">Active Cases
-										<div class="text_to_right_color">12000000
+									<div class="text_to_left_color" id="active_cases-incidence">Active Cases
+										<div class="text_to_right_color" id="active_number-incidence_number">-
 										</div>
 									</div>
 								</li>
 							</div>
-							<div class="list_bullet_orange">
+							<div class="list_bullet_lime" id="recovered">
 								<li>
 									<div class="text_to_left_color">Recovered Cases
-										<div class="text_to_right_color">1
+										<div class="text_to_right_color" id="recovered_number">-
 										</div>
 									</div>
 								</li>
 							</div>
-							<div class="list_bullet_black">
+							<div class="list_bullet_black" id="fatal">
 								<li>
 									<div class="text_to_left_color">Fatal Cases
-										<div class="text_to_right_color">1
+										<div class="text_to_right_color" id="fatal_number">-
 										</div>
 									</div>
 								</li>
@@ -81,7 +85,7 @@
 		  
 		  <tr>
 			<th style="border: 1px solid #989898; vertical-align:top;">
-				<div class="scrollable">
+				<div class="scrollable" id="county_list">
 					<div class="top_row">
 						<div>
 							<button id="Alba" class="button_county"> Alba </button>

@@ -66,9 +66,21 @@
 	float: left;
 }
 
+.bell_button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+	height: 20px; 
+	width: 25px;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+	float: right;
+}
+
 .scrollable {
     width: 300px;
-    height: 515px;  /* lower this if there are white margins at the top and the bottom of the map */
+    height: 520px;  /* lower this if there are white margins at the top and the bottom of the map */
     overflow: auto;
 }
 
@@ -83,7 +95,7 @@
 .font2 {
 	font-family: 'Nanum Gothic', sans-serif;
 	text-align: center;
-	font-size: 40px;
+	font-size: 34px;
 	color: red;
 	padding-right: 5px;
 }
