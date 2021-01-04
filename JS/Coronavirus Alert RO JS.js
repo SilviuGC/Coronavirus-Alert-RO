@@ -116,14 +116,14 @@ function initMap() {
 
            alert_limit = prompt("Please enter the number limit for an alert for " + (location.state) + ".\n(Or just leave blank if you want to disable alert mode.)", localStorage.getItem("alert_limit_key"));
 
-           while(alert_limit.replace(/[0-9]/g, '').length!=0){
+           while(alert_limit.trim().replace(/[0-9]/g, '').length!=0){
             alert_limit = prompt("Please enter a valid number or leave blank to cancel alerts.");
 
-            if(alert_limit.replace(/[0-9]/g, '').length!=0)
+            if(alert_limit.trim().replace(/[0-9]/g, '').length!=0)
               console.log(/^\d+$/.test(alert_limit));
            }
            
-           localStorage.setItem("alert_limit_key", alert_limit); 
+           localStorage.setItem("alert_limit_key", alert_limit.trim()); 
 
            if(parseInt(alert_limit)>=0){
             current_location = true;
@@ -430,7 +430,7 @@ function initMap() {
           if(current_location == true && data.currentDayStats.countyInfectionsNumbers[county]>alert_limit){
             setTimeout(() => {
               playAlertSound();
-              alert("Value has been exceeded!\nOver " + alert_limit + " infections!");
+              alert("Value has been exceeded!\nOver " + alert_limit.trim() + " infections!");
               current_location = false;
             },2000);
           } else current_location = false;
