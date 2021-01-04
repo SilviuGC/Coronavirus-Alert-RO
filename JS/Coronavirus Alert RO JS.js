@@ -6,7 +6,7 @@ var highlightCoordinates, highlightPolygon;
 var initialize=false;
 var alert_limit = localStorage.getItem("alert_limit_key");
 var current_location = false;
-var myChartCincN, myChartCInfN;
+var myChartCincN, myChartCinfN;
 
 // Initialize and add the map
 function initMap() {
@@ -524,12 +524,12 @@ function initMap() {
         
         $.each(data.currentDayStats.countyInfectionsNumbers, function(i, item) {
           //console.log(i + " " + item);   
-          addData(myChartCInfN, i, item);
+          addData(myChartCinfN, i, item);
       })   
       
         $.each(data.currentDayStats.incidence, function(i, item) {
           //console.log(i+ " " +item);
-          addColor(myChartCInfN, item);
+          addColor(myChartCinfN, item);
 
           addData(myChartCincN, i, item);
           addColor(myChartCincN, item);
@@ -539,7 +539,7 @@ function initMap() {
 
   function initiateChartCountyInfectedNumbers() {
     var ctx = document.getElementById('myChartCountyInfectedNumbers').getContext('2d');
-    myChartCInfN = new Chart(ctx, {
+    myChartCinfN = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: [],
@@ -559,14 +559,14 @@ function initMap() {
                     }
                 }]
             },
-            tooltips: {
-              callbacks: {
-                label: function(tooltipItem) {
-                console.log(tooltipItem)
-                  return tooltipItem.yLabel;
-                }
+        tooltips: {
+            callbacks: {
+              label: function(tooltipItem) {
+              console.log(tooltipItem)
+                return tooltipItem.yLabel;
               }
             }
+          }
         }
     });
   }
@@ -586,15 +586,14 @@ function initMap() {
             }]
         },
         options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
-        },
-        tooltips: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero: true
+                  }
+              }]
+          },
+      tooltips: {
           callbacks: {
             label: function(tooltipItem) {
             console.log(tooltipItem)
@@ -602,6 +601,7 @@ function initMap() {
             }
           }
         }
+      }
     });
   }
 
