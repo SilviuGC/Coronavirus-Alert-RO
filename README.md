@@ -1,5 +1,8 @@
-~~~~~~~~~~~~~~Disclaimer!~~~~~~~~~~~~~~
+---------------------Disclaimer!---------------------
+
 This web application was made for the West University Of Timisoara.
+
+-----------------------------------------------------
 
 You need to have any Python 3.x.x version installed.
 
