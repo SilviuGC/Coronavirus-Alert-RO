@@ -10,7 +10,7 @@ After that, just run one of the batch files. If one doesn't work, the other one 
 
 To close the server, you need to go to the cmd and press "CTRL + C", "y" and "Enter".
 
-Also DISABLE ADBLOCK.
+Also DISABLE ADBLOCK. Otherwise the alerts won't work.
 
 
 
