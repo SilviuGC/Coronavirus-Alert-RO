@@ -1,8 +1,8 @@
----------------------Disclaimer!---------------------
+__Disclaimer!__
 
-This web application was made for the West University Of Timisoara.
+Coronavirus Alert RO was made for the "West University Of Timisoara", for the discipline "Web Technologies".
 
------------------------------------------------------
+_______________________________________________________
 
 You need to have any Python 3.x.x version installed.
 
