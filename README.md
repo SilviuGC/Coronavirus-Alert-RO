@@ -1,5 +1,7 @@
 __Disclaimer!__
 
+THE PROGRAM DOES NOT WORK ANYMORE, since I closed the Google Maps API billing account. You could probably replace the current map API key with the one from the old HTML.
+
 Coronavirus Alert RO was made for the "West University Of Timisoara", for the discipline "Web Technologies".
 
 _______________________________________________________
