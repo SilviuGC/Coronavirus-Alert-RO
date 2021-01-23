@@ -4,6 +4,8 @@ Coronavirus Alert RO was made for the "West University Of Timisoara", for the di
 _______________________________________________________
 
 THE BATCH SERVERS DO NOT WORK ANYMORE, since I closed the Google Maps API billing account.
+Just access the program through the main html.
+Ignore what's written bellow if you aren't going to use your own key.
 _______________________________________________________
 
 You need to have any Python 3.x.x version installed.
