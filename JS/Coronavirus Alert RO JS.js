@@ -600,7 +600,7 @@ function initMap() {
               return tooltipItem.yLabel;
             },
           }
-          }
+        }
       }
     });
   }
